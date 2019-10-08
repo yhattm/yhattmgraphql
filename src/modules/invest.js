@@ -84,12 +84,6 @@ const getExchanges = async () => {
       sell: parseFloat($(selectorPrice[14]).text())
     },
     {
-      currency: "HKD",
-      price: config.exchanges.filter(ex => ex.currency == "HKD")[0].price,
-      buy: parseFloat($(selectorPrice[23]).text()),
-      sell: parseFloat($(selectorPrice[24]).text())
-    },
-    {
       currency: "AUD",
       price: config.exchanges.filter(ex => ex.currency == "AUD")[0].price,
       buy: parseFloat($(selectorPrice[33]).text()),
