@@ -1,5 +1,5 @@
 const { ApolloServer, gql } = require("apollo-server");
-const { invest } = require("tslib");
+const { invest } = require("yhattmtslib");
 
 const typeDefs = gql`
   type Option {
