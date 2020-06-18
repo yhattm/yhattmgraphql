@@ -1,6 +1,7 @@
 const { ApolloServer, gql } = require("apollo-server");
+const { invest } = require("tslib");
 
-const invest = require("./src/modules/invest");
+// const invest = require("./src/modules/invest");
 
 const typeDefs = gql`
   type Option {
@@ -41,16 +42,19 @@ const typeDefs = gql`
 const resolvers = {
   Query: {
     option: (obj, args, context, info) =>
-      invest.getOption({ date: args.date, target: args.target }),
-    stock: () => invest.getStock(),
-    exchanges: () => invest.getExchanges(),
-    gold: () => invest.getGold()
+      invest.GetOption({ date: args.date, target: args.target }),
+    stock: () => invest.GetStock(),
+    exchanges: () => invest.GetExchanges(),
+    gold: () => invest.GetGold()
   }
 };
 
-const server = new ApolloServer({ typeDefs, resolvers,
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
   introspection: true,
-  playground: true });
+  playground: true
+});
 
 server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
   console.log(`🚀 Server ready at ${url}`);
