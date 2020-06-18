@@ -1,8 +1,6 @@
 const { ApolloServer, gql } = require("apollo-server");
 const { invest } = require("tslib");
 
-// const invest = require("./src/modules/invest");
-
 const typeDefs = gql`
   type Option {
     call: Float
