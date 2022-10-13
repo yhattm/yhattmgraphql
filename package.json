@@ -11,7 +11,7 @@
     "start": "node ."
   },
   "dependencies": {
-    "apollo-server": "2.14.5",
+    "apollo-server": "2.25.4",
     "yhattmtslib": "https://github.com/yhattm/yhattmtslib.git"
   }
 }
